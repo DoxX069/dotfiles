@@ -15,7 +15,7 @@ exec --no-startup-id picom
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id /home/nils/.config/polybar/launch_polybar.sh
 exec_always feh --bg-scale /home/nils/Pictures/wallpapers/apple-black-4k.png
-exec --no-sartup-id rclone mount --daemon gdrive: /home/nils/gdrive
+exec_always rclone mount --daemon gdrive: /home/nils/gdrive
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
