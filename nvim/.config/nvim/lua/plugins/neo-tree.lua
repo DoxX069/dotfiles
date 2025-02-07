@@ -6,8 +6,16 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
 	},
-	config = function()
-		vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal right<CR>", {})
-		vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
-	end,
+  keys = {
+    {
+      "<leader>n",
+      "<cmd>Neotree toggle reveal right<CR>",
+      desc = "File Manager (Neotree)"
+    },
+    {
+      "<leader>Nb",
+      "<cmd>Neotree buffers reveal float<CR>",
+      desc = "File Manager Buffers(Neotree)"
+    }
+  }
 }
