@@ -1,3 +1,3 @@
 return { "echasnovski/mini.nvim",
-  version = false 
+  version = false
 }

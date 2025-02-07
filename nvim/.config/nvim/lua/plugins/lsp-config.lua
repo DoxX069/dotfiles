@@ -20,7 +20,7 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       local lspconfig = require("lspconfig")
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities
       })
       lspconfig.solargraph.setup({
@@ -39,6 +39,9 @@ return {
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.code_action, {})
       vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, {})
+
+      --keybind for Mason (lsp installer)
+      vim.keymap.set("n", "<leader>m", ":Mason<CR>", { noremap = true, silent = true })
     end,
   },
 }
