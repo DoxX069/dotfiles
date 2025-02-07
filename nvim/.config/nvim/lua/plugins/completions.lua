@@ -26,11 +26,27 @@ return {
           documentation = cmp.config.window.bordered(),
         },
         mapping = cmp.mapping.preset.insert({
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(),
+          -- Navigate through completions with <Tab> and <S-Tab>
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item() -- Go to the next item
+            else
+              fallback() -- Fallback to default <Tab> behavior
+            end
+          end, { "i", "s" }),
+
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item() -- Go to the previous item
+            else
+              fallback() -- Fallback to default <S-Tab> behavior
+            end
+          end, { "i", "s" }),
+          ["<C-b>"] = cmp.mapping.scroll_docs(-2),
+          ["<C-f>"] = cmp.mapping.scroll_docs(2),
+          ["<C-Tab>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<Cr>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
