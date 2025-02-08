@@ -6,7 +6,11 @@ return {
     {'nvim-lua/popup.nvim'},
     {'nvim-lua/plenary.nvim'},
   },
-  config = function()
-		vim.keymap.set("n", "<leader>ch", ":Cheatsheet<CR>", {})
-	end,
+  keys = {
+    {
+      "<leader>ch",
+      "<cmd>Cheatsheet<CR>",
+      desc = "Cheatsheet"
+    }
+  }
 }

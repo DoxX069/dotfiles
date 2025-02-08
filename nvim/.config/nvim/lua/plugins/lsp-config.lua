@@ -17,31 +17,58 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
       lspconfig.ts_ls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.solargraph.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.html.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
       lspconfig.lua_ls.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
       })
-
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.code_action, {})
-      vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, {})
-
-      --keybind for Mason (lsp installer)
-      vim.keymap.set("n", "<leader>m", ":Mason<CR>", { noremap = true, silent = true })
     end,
+    keys = {
+      {
+        "K",
+        "<cmd>lua vim.lsp.buf.hover()<CR>",
+        desc = "Documentation for the symbol (hover)",
+      },
+      {
+        "<leader>gd",
+        "<cmd>lua vim.lsp.buf.definition()<CR>",
+        desc = "Definition of the symbol",
+      },
+      {
+        "<leader>gr",
+        "<cmd>lua vim.lsp.buf.references()<CR>",
+        desc = "References to the symbol",
+      },
+      {
+        "<leader>ca",
+        "<cmd>lua vim.lsp.buf.code_action()<CR>",
+        desc = "Code actions (e.g., refactoring, fixes)",
+      },
+      {
+        "<leader>rn",
+        "<cmd>lua vim.lsp.buf.rename()<CR>",
+        desc = "Rename the symbol",
+      },
+      {
+        "<space>rn",
+        "<cmd>lua vim.lsp.buf.rename()<CR>",
+        desc = "Rename the symbol",
+      },
+      {
+        "<leader>m",
+        "<cmd>Mason<CR>",
+        desc = "Open Mason",
+      },
+    },
   },
 }
