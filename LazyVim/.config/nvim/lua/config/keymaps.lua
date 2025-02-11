@@ -3,5 +3,26 @@
 -- Add any additional keymaps here
 --
 keys = {
-  { "<leader>p", "<cmd>:LiveServerStart<CR>", desc = "Start Live Server" },
+  {
+    "n",
+    "<leader>p",
+    "<cmd>:LiveServerStart<CR>",
+    desc = "Start Live Server",
+  },
+  {
+    "<leader>t",
+    false,
+  },
+  {
+    "n",
+    "<leader>tt",
+    "<cmd>ToggleTerm<CR>",
+    desc = "ToggleTerm",
+  },
+  {
+    "n",
+    "<leader>gg",
+    "<cmd>LazyGit<CR>",
+    desc = "LazyGit",
+  },
 }
