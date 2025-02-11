@@ -19,10 +19,4 @@ keys = {
     "<cmd>ToggleTerm<CR>",
     desc = "ToggleTerm",
   },
-  {
-    "n",
-    "<leader>gg",
-    "<cmd>LazyGit<CR>",
-    desc = "LazyGit",
-  },
 }
