@@ -22,6 +22,4 @@ family = "MesloLGS Nerd Font Mono"
 style = "Regular"
 
 [general]
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
