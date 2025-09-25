@@ -6,3 +6,5 @@ vim.opt.relativenumber = false -- Disable relative line numbers
 vim.opt.wrap = true -- Set wrap on
 vim.opt.expandtab = false -- Convert tabs to spaces
 vim.opt.cursorline = false -- Do not highlight current line
+vim.opt.scroll = 1 -- Scroll … lines at a time
+vim.opt.diagnostic_enable = false
